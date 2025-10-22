@@ -1,0 +1,245 @@
+.support-hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  /* background: #3609ff; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.support-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(46, 14, 255, 0.358);
+  z-index: 2;
+}
+
+.support-hero__background-manuals {
+  position: absolute;
+  inset: 0;
+  background-image: url('../../assets/photos/support_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.support-hero__content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: white;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.support-hero__subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  text-transform: uppercase;
+}
+
+.support-hero__heading {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  line-height: 0.9;
+  margin: 0 0 40px 0;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.support-hero__heading-line {
+  display: block;
+  border: 3px solid white;
+  padding: 20px 40px;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.support-hero__description {
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .support-hero__heading {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    letter-spacing: 3px;
+  }
+  
+  .support-hero__heading-line {
+    padding: 15px 30px;
+    margin: 8px 0;
+  }
+  
+  .support-hero__subtitle {
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+  }
+  
+  .support-hero__description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .support-hero__heading {
+    font-size: clamp(2rem, 6vw, 4rem);
+    letter-spacing: 2px;
+  }
+  
+  .support-hero__heading-line {
+    padding: 12px 20px;
+    margin: 6px 0;
+    border-width: 2px;
+  }
+  
+  .support-hero__subtitle {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+  }
+  
+  .support-hero__description {
+    font-size: 0.95rem;
+  }
+  
+  .support-hero__background-manuals {
+    background-size: 150px 225px, 135px 210px, 120px 195px;
+    background-position: 
+      5% 15%, 
+      75% 35%, 
+      25% 55%;
+  }
+}
+
+@media (max-width: 480px) {
+  .support-hero__heading {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    letter-spacing: 1px;
+  }
+  
+  .support-hero__heading-line {
+    padding: 10px 15px;
+    margin: 4px 0;
+    border-width: 1px;
+  }
+  
+  .support-hero__subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+  }
+  
+  .support-hero__description {
+    font-size: 0.9rem;
+  }
+  
+  .support-hero__background-manuals {
+    background-size: 120px 180px, 100px 160px, 80px 140px;
+    background-position: 
+      2% 10%, 
+      80% 30%, 
+      20% 50%;
+  }
+}
+
+/* Animation effects */
+.support-hero__content {
+  animation: fadeInUp 1s ease-out;
+}
+
+.support-hero__subtitle {
+  animation: fadeInLeft 1s ease-out 0.2s both;
+}
+
+.support-hero__heading {
+  animation: fadeInRight 1s ease-out 0.4s both;
+}
+
+.support-hero__description {
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hover effects */
+.support-hero__heading-line:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .support-hero {
+    background: #000000;
+  }
+  
+  .support-hero__overlay {
+    background: rgba(0, 0, 0, 0.9);
+  }
+  
+  .support-hero__heading-line {
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .support-hero__content,
+  .support-hero__subtitle,
+  .support-hero__heading,
+  .support-hero__description {
+    animation: none;
+  }
+  
+  .support-hero__heading-line:hover {
+    transform: none;
+  }
+}
