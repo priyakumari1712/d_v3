@@ -140,7 +140,7 @@ function TermsConditions() {
               <li>Multi-stage paint correction and preparation</li>
             </ul>
             <p>
-              Use our "Find an Installer" tool to locate certified professionals in your area. DSQUARED is not responsible 
+              Use our "Find a Distributor" tool to locate certified professionals in your area. DSQUARED is not responsible 
               for installation errors or misapplication of products by non-certified installers or DIY users.
             </p>
           </section>

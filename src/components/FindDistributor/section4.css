@@ -1,0 +1,337 @@
+/* Pagination Section */
+.pagination-section {
+  padding: 40px 0;
+  background: #0a0a0a;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pagination-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.pagination-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #ffffff;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(0, 0, 0, 0.03) 10px,
+    rgba(0, 0, 0, 0.03) 20px
+  );
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Results Info */
+.results-info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.results-text {
+  color: #666666;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Pagination Controls */
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Pagination Buttons */
+.pagination-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pagination-btn:hover:not(.disabled) {
+  background: rgba(210, 22, 22, 0.2);
+  border-color: rgba(210, 22, 22, 0.5);
+  transform: translateY(-2px);
+}
+
+.pagination-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.btn-text {
+  font-size: 0.85rem;
+}
+
+/* Page Numbers */
+.page-numbers {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.page-number {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  color: #666666;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-number:hover:not(.ellipsis) {
+  background: rgba(210, 22, 22, 0.2);
+  border-color: rgba(210, 22, 22, 0.5);
+  transform: translateY(-2px);
+}
+
+.page-number.active {
+  background: #d21616;
+  border-color: #d21616;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(210, 22, 22, 0.3);
+  border-radius: 50%;
+}
+
+.page-number.active:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(210, 22, 22, 0.4);
+}
+
+.page-number.ellipsis {
+  cursor: default;
+  background: transparent;
+  border: none;
+  color: #666666;
+}
+
+.page-number.ellipsis:hover {
+  transform: none;
+  background: transparent;
+}
+
+/* Quick Jump */
+.quick-jump {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  justify-content: flex-end;
+  min-width: 200px;
+}
+
+.jump-label {
+  color: #666666;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.page-select {
+  padding: 8px 12px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  color: #000000;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 80px;
+}
+
+.page-select:focus {
+  outline: none;
+  border-color: #d21616;
+  box-shadow: 0 0 0 3px rgba(210, 22, 22, 0.1);
+}
+
+.page-select option {
+  background: #ffffff;
+  color: #000000;
+  padding: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pagination-container {
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+  }
+  
+  .pagination-controls {
+    order: 2;
+  }
+  
+  .results-info {
+    order: 1;
+    text-align: center;
+  }
+  
+  .quick-jump {
+    order: 3;
+    justify-content: center;
+    min-width: auto;
+  }
+  
+  .page-numbers {
+    gap: 5px;
+  }
+  
+  .page-number {
+    width: 40px;
+    height: 40px;
+    font-size: 0.85rem;
+  }
+  
+  .pagination-btn {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+  }
+  
+  .btn-text {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination-section {
+    padding: 30px 0;
+  }
+  
+  .pagination-container {
+    padding: 0 15px;
+  }
+  
+  .page-numbers {
+    gap: 3px;
+  }
+  
+  .page-number {
+    width: 35px;
+    height: 35px;
+    font-size: 0.8rem;
+  }
+  
+  .pagination-btn {
+    padding: 8px 12px;
+  }
+  
+  .quick-jump {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .jump-label {
+    font-size: 0.8rem;
+  }
+  
+  .page-select {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
+
+/* Animation Effects */
+@keyframes pageChange {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pagination-section {
+  animation: pageChange 0.5s ease-out;
+}
+
+/* Hover Effects for Better UX */
+.pagination-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.pagination-btn:hover::before {
+  left: 100%;
+}
+
+.page-number::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.page-number:hover::before {
+  opacity: 1;
+}

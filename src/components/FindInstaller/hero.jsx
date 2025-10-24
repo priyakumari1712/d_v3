@@ -1,0 +1,54 @@
+import React from 'react';
+import './hero.css';
+
+const FindInstallerHero = () => {
+  return (
+    <section className="installer-hero">
+      <div className="hero-overlay" />
+      <div className="hero-content">
+        {/* Left Section - Title and Brands */}
+        <div className="hero-left">
+          <h1 className="hero-title">
+            <span className="title-line">FIND AN</span>
+            <span className="title-line">INSTALLER</span>
+          </h1>
+          
+          <div className="brand-logos">
+            <div className="brand-logo">C.QUARTZ</div>
+            <div className="brand-logo">D.QUARTZ</div>
+            <div className="brand-logo">
+              immortal
+              <span className="brand-subtitle">Instant Self-Healing PPF</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Section - Text and CARPRO Logo */}
+        <div className="hero-right">
+          <div className="hero-text">
+            <p>
+              Since day one the goal of CQUARTZ Finest, has been to approve only the most talented, caring, and character driven professionals across the world.
+            </p>
+            <p>
+              Use the map below to locate the nearest installer in the certified CARPRO network.
+            </p>
+            <p className="note-text">
+              NOTE: DQUARTZ is available at all CQPRO and CQFR installers!
+            </p>
+          </div>
+          
+          <div className="certification-logo">
+            <div className="cert-logo">
+              <div className="cert-text">CARPRO</div>
+              <div className="cert-subtitle">INSTALLER</div>
+              <div className="cert-ring">CERTIFIED CERTIFIED CERTIFIED CERTIFIED</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default FindInstallerHero;
+

@@ -265,56 +265,84 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.search-container {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    border-top: 1px solid #eee;
-    padding-top: 15px;
-    /* background-color: #000; */
+/* Desktop Search Bar - Theme Matching */
+.desktop-search-container {
+  display: flex;
+  align-items: center;
+  /* margin-top: 20px; */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  /* padding-top: 15px; */
+  width: 100%;
+  position: relative;
+  max-width: 100%;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+  /* background-color: red; */
 }
 
-.search-input {
-    flex: 1;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-right: none;
-    border-radius: 0;
-    font-size: 14px;
-    background-color: rgb(214, 214, 214);
-    color: #333;
-    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+.desktop-search-container .desktop-search-input {
+  flex: 1 !important;
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: none;
+  border-radius: 0;
+  font-size: 14px;
+  background-color: rgba(118, 118, 118, 0.1);
+  color: #222222 !important; 
+  outline: none;
+  transition: all 0.3s ease;
+  height: 42px;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+  backdrop-filter: blur(10px);
+  margin-right: 0;
+  border-radius: 5px;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
 }
 
-.search-input::placeholder {
-    color: #999;
+.desktop-search-container .desktop-search-input::placeholder {
+  color: rgba(58, 58, 58, 0.97);
+  font-family: 'Orbitron', sans-serif;
 }
 
-.search-button {
-    width: 44px;
-    height: 42px;
-    background-color: rgb(214, 214, 214);
-
-    /* color: #333; */
-    border-radius: 0%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    clip-path: polygon(0px 0, 100% 0px, 100% 100%, 10px 100%);
-    transition: background-color 0.2s ease;
+.desktop-search-container .desktop-search-input:focus {
+  border-color: #d21616;
+  box-shadow: 0 0 0 2px rgba(210, 22, 22, 0.2);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
-.search-button:hover {
-    background-color: #e1e1e1;
+.desktop-search-container .desktop-search-button {
+  width: 50px;
+  height: 42px;
+  background-color: #383838;
+  border: 1px solid #f8f8f8;
+  border-radius: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+  position: relative;
+  border-left: none;
+  margin-left: -1px;
+  flex-shrink: 0;
 }
 
-.search-button img {
-    /* background-color: #666; */
-    font-weight: 800;
-    width: 24px !important;
-    height: 24px !important;
-    /* color: #fefefe !important; */
+.desktop-search-container .desktop-search-button:hover {
+  background-color: #b81414;
+  border-color: #b81414;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(210, 22, 22, 0.3);
+}
+
+.desktop-search-container .desktop-search-button img {
+  filter: brightness(0) invert(1);
+  width: 18px;
+  height: 18px;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* Fixed navbar class for mobile scroll trigger */
@@ -567,25 +595,82 @@
         min-width: 30px;
     }
     
-    .search-container {
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        margin-top: 15px;
+    /* Mobile Search Container Styles - Match Desktop */
+    .mobile-search-container {
+        display: flex;
+        align-items: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
         padding-top: 15px;
+        width: 100%;
+        position: relative;
+        max-width: 100%;
+        margin-top: 15px;
     }
     
-    .search-input {
+    .mobile-search-container .mobile-search-input {
+        flex: 1 !important;
+        width: 100%;
+        padding: 12px 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-right: none;
+        border-radius: 0;
+        font-size: 14px;
         background-color: rgba(255, 255, 255, 0.1);
-        border-color: rgba(255, 255, 255, 0.3);
-        color: white;
+        color: #ffffff;
+        outline: none;
+        transition: all 0.3s ease;
+        height: 42px;
+        box-sizing: border-box;
+        font-family: 'Orbitron', sans-serif;
+        backdrop-filter: blur(10px);
+        margin-right: 0;
+        border-radius: 5px;
+        clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
     }
     
-    .search-input::placeholder {
-        color: #ccc;
+    .mobile-search-container .mobile-search-input::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+        font-family: 'Orbitron', sans-serif;
     }
     
-    .search-button {
-        background-color: rgba(255, 255, 255, 0.1);
-        border-color: rgba(255, 255, 255, 0.3);
-        color: white;
+     .mobile-search-container .mobile-search-input:focus {
+         border-color: #d21616;
+         box-shadow: 0 0 0 2px rgba(210, 22, 22, 0.2);
+         background-color: rgba(255, 255, 255, 0.15);
+         outline: none;
+     }
+    
+    .mobile-search-container .mobile-search-button {
+        width: 60px;
+        height: 42px;
+        background-color: #d21616;
+        border: 1px solid #d21616;
+        border-radius: 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+        position: relative;
+        border-left: none;
+        margin-left: -1px;
+        flex-shrink: 0;
+    }
+    
+    .mobile-search-container .mobile-search-button:hover {
+        background-color: #b81414;
+        border-color: #b81414;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(210, 22, 22, 0.3);
+    }
+    
+    .mobile-search-container .mobile-search-button img {
+        filter: brightness(0) invert(1);
+        width: 18px;
+        height: 18px;
+        position: relative;
+        z-index: 1;
+        pointer-events: none;
     }
 }
