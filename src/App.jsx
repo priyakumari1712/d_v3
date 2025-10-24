@@ -7,6 +7,8 @@ import Contact from './pages/Contact'
 import Allproducts from './pages/Allproducts'
 import AboutMain from './pages/AboutMain'
 import Support from './pages/Support'
+import FindDistributor from './pages/FindDistributor'
+import FindInstaller from './pages/FindInstaller'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsConditions from './pages/TermsConditions'
 import { initNavbarScrollTrigger, cleanupScrollTrigger } from './script'
@@ -31,6 +33,8 @@ function App() {
         <Route path="/all-products" element={<Allproducts />} />
         <Route path="/about" element={<AboutMain />} />
         <Route path="/support" element={<Support />} />
+            <Route path="/find-distributor" element={<FindDistributor />} />
+            <Route path="/find-installer" element={<FindInstaller />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
       </Routes>

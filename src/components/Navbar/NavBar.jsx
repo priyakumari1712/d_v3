@@ -93,10 +93,12 @@ function NavBar() {
           <p>Microfibers, polishing pads, brushes, merch</p>
         </div>
       </div>
-      <div className="search-container">
-        <input type="text" placeholder="Search..." className="search-input" />
-        <button className="search-button">
-          <img src={searchIcon} alt="Search" width="24" height="24" />
+      
+      {/* Search Bar */}
+      <div className="desktop-search-container">
+        <input type="text" placeholder="Search products..." className="desktop-search-input" />
+        <button className="desktop-search-button">
+          <img src={searchIcon} alt="Search" />
         </button>
       </div>
     </div>
@@ -175,12 +177,12 @@ function NavBar() {
 
           {/* Menu Two - Distributor */}
           <nav className="menu_two">
-            <a href="#" onClick={(e) => e.preventDefault()}>Find the Distributor</a>
+            <Link to="/find-distributor" onClick={scrollToTop}>Find the Distributor</Link>
           </nav>
 
           {/* Menu Three - Installer */}
           <nav className="menu_three">
-            <a href="#" onClick={(e) => e.preventDefault()}>Find installer</a>
+            <Link to="/find-installer" onClick={scrollToTop}>Find Installer</Link>
           </nav>
 
           {/* Hamburger Menu for Mobile */}
@@ -256,15 +258,10 @@ function NavBar() {
                     </a>
                   </div>
                 </div>
-                <div className="search-container">
-                  <input type="text" placeholder="Search..." className="search-input" />
-                  <button className="search-button">
-                    <img src={searchIcon} alt="Search" />
-                  </button>
-                </div>
               </div>
             )}
           </div>
+          
           <Link to="/about" onClick={() => { toggleMobileMenu(); closeMobileProducts(); closeMobileSupport(); scrollToTop() }}>
             About
           </Link>
@@ -300,12 +297,20 @@ function NavBar() {
           <Link to="/contact" onClick={() => { toggleMobileMenu(); closeMobileProducts(); closeMobileSupport(); scrollToTop() }}>
             Contact
           </Link>
-          <a href="#" onClick={(e) => { e.preventDefault(); toggleMobileMenu(); closeMobileProducts(); closeMobileSupport() }}>
+          <Link to="/find-distributor" onClick={() => { toggleMobileMenu(); closeMobileProducts(); closeMobileSupport(); scrollToTop() }}>
             Find the Distributor
-          </a>
-          <a href="#" onClick={(e) => { e.preventDefault(); toggleMobileMenu(); closeMobileProducts(); closeMobileSupport() }}>
-            Find installer
-          </a>
+          </Link>
+          <Link to="/find-installer" onClick={() => { toggleMobileMenu(); closeMobileProducts(); closeMobileSupport(); scrollToTop() }}>
+            Find Installer
+          </Link>
+          
+          {/* Mobile Search Bar - At Bottom */}
+          <div className="mobile-search-container">
+            <input type="text" placeholder="Search products..." className="mobile-search-input" />
+            <button className="mobile-search-button">
+              <img src={searchIcon} alt="Search" />
+            </button>
+          </div>
         </div>
       </div>
     </header>

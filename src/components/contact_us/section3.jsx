@@ -104,7 +104,7 @@ const ContactSection3 = () => {
                 <div className="location-icon">📍</div>
                 <div className="location-info">
                   <h4>{location.country}</h4>
-                  <p>Certified Installers Available</p>
+                  <p>Certified Distributors Available</p>
                 </div>
               </div>
             ))}

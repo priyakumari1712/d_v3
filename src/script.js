@@ -9,9 +9,18 @@ export function initNavbarScrollTrigger() {
   // Check if we're on mobile view (screen width <= 768px)
   const isMobile = () => window.innerWidth <= 768;
   
+      // Find the appropriate hero element
+      const heroElement = document.querySelector('.hero') || document.querySelector('.distributor-hero') || document.querySelector('.installer-hero');
+  
+  // If no hero element found, return early
+  if (!heroElement) {
+    console.log('No hero element found, skipping scroll trigger initialization');
+    return;
+  }
+  
   // Create the scroll trigger
   ScrollTrigger.create({
-    trigger: '.hero', // Target the hero section
+    trigger: heroElement, // Target the hero section
     start: '80% top', // Start when 80% of hero section has scrolled past the top
     end: 'bottom top', // End when hero section is completely past the top
     onEnter: () => {

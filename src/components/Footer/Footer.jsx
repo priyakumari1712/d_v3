@@ -12,8 +12,8 @@ function Footer() {
       <div className="footer__cta">
         <span className="footer__lead">Begin your journey</span>
         <div className="footer__ctaButtons">
-          <a href="#" className="footer__ctaBtn footer__ctaBtn--primary">Find an Installer</a>
-          <a href="#" className="footer__ctaBtn">Find a Distributor</a>
+          <a href="#" className="footer__ctaBtn footer__ctaBtn--primary">Find a Distributor</a>
+          <Link to="/find-distributor" onClick={scrollToTop} className="footer__ctaBtn">Find a Distributor</Link>
         </div>
       </div>
 
@@ -47,8 +47,8 @@ function Footer() {
           </div>
           <div className="footer__col">
             <h4 className="footer__title">Find</h4>
-            <a href="#" className="footer__link">Find an Installer</a>
             <a href="#" className="footer__link">Find a Distributor</a>
+            <Link to="/find-distributor" onClick={scrollToTop} className="footer__link">Find a Distributor</Link>
           </div>
         </div>
 
